@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-
+import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -24,6 +25,41 @@ function SocialLink({ className, href, children, icon: Icon }) {
     </li>
   )
 }
+function ArrowDownIcon(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function BriefcaseIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+      />
+      <path
+        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
+    </svg>
+  )
+}
 
 function MailIcon(props) {
   return (
@@ -37,9 +73,77 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: 'About',
-  description:
-    'I’m Spencer Sharp. I live in New York City, where I design the future.',
+  title: 'Gagaandeep Singh',
+  description: 'I’m Web Developer. I live in India, where I design the future.',
+}
+
+function Role({ role }) {
+  let startLabel =
+    typeof role.start === 'string' ? role.start : role.start.label
+  let startDate =
+    typeof role.start === 'string' ? role.start : role.start.dateTime
+
+  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
+  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+
+  return (
+    <li className="flex gap-4">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+      </div>
+      <dl className="flex flex-auto flex-wrap gap-x-2">
+        <dt className="sr-only">Company</dt>
+        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {role.company}
+        </dd>
+        <dt className="sr-only">Role</dt>
+        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+          {role.title}
+        </dd>
+        <dt className="sr-only">Date</dt>
+        <dd
+          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+          aria-label={`${startLabel} until ${endLabel}`}
+        >
+          <time dateTime={startDate}>{startLabel}</time>{' '}
+          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={endDate}>{endLabel}</time>
+        </dd>
+      </dl>
+    </li>
+  )
+}
+
+function Resume() {
+  let resume = [
+    {
+      company: 'Rigelnext Games',
+      title: 'Web Developer Intern',
+      logo: logoPlanetaria,
+      start: 'Oct. 2024',
+      end: 'Jan. 2025',
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Work</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {resume.map((role, roleIndex) => (
+          <Role key={roleIndex} role={role} />
+        ))}
+      </ol>
+      <a href="/resume.pdf" download="resume.pdf">
+        <Button variant="secondary" className="group mt-6 w-full">
+          Download Resume
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </a>
+    </div>
+  )
 }
 
 export default function Home() {
@@ -63,31 +167,31 @@ export default function Home() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              I'm a Full Stack Web Developer skilled in building
+              high-performance Next.js web applications. Ability to translate
+              tinkering ideas into technical solutions, with strong intuitive
+              problem solving skills
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              With 1.5 years of experience, I specialize in Next.js, React,
+              javascript Tailwind CSS, Node.js,SQL and non-SQL databases,
+              crafting seamless user experiences with a focus on efficiency and
+              performance.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              I thrive on solving complex problems through intuitive UI/UX
+              design, optimized data handling, and seamless API integrations.
+              Whether it’s developing real-time dashboards, e-commerce
+              platforms, or dynamic blogging systems, I love turning ideas into
+              functional, impactful solutions.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              Beyond coding, I enjoy exploring new technologies, optimizing web
+              performance, and continuously refining my skills. I believe in
+              writing clean, maintainable code and creating applications that
+              are not only functional but also engaging.
             </p>
+            <p>Let’s connect and build something amazing together! 🚀</p>
           </div>
         </div>
         <div className="lg:pl-20">
@@ -95,10 +199,13 @@ export default function Home() {
             {/* <SocialLink href="#" icon={XIcon}>
               Follow on X
             </SocialLink> */}
+            <div className="mt-4 lg:pl-1 xl:pl-4">
+              <Resume />
+            </div>
             <SocialLink
               href="https://www.instagram.com/gdskaran/"
               icon={InstagramIcon}
-              className="mt-4"
+              className="mt-6 space-y-4 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
               Follow on Instagram
             </SocialLink>

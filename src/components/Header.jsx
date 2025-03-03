@@ -14,7 +14,7 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.jpg'
+import avatarImage from '@/images/fav.jpg'
 
 function CloseIcon(props) {
   return (
@@ -340,42 +340,6 @@ export function Header() {
           marginBottom: 'var(--header-mb)',
         }}
       >
-        {isHomePage && (
-          <>
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"
-            />
-            <Container
-              className="top-0 order-last -mb-3 pt-3"
-              style={{
-                position: 'var(--header-position)',
-              }}
-            >
-              <div
-                className="top-(--avatar-top,--spacing(3)) w-full"
-                style={{
-                  position: 'var(--header-inner-position)',
-                }}
-              >
-                <div className="relative">
-                  <AvatarContainer
-                    className="absolute top-3 left-0 origin-left transition-opacity"
-                    style={{
-                      opacity: 'var(--avatar-border-opacity, 0)',
-                      transform: 'var(--avatar-border-transform)',
-                    }}
-                  />
-                  <Avatar
-                    large
-                    className="block h-16 w-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
-                  />
-                </div>
-              </div>
-            </Container>
-          </>
-        )}
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
@@ -391,11 +355,9 @@ export function Header() {
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">
-                {!isHomePage && (
-                  <AvatarContainer>
-                    <Avatar />
-                  </AvatarContainer>
-                )}
+                <AvatarContainer>
+                  <Avatar />
+                </AvatarContainer>
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
@@ -410,12 +372,8 @@ export function Header() {
           </Container>
         </div>
       </header>
-      {isHomePage && (
-        <div
-          className="flex-none"
-          style={{ height: 'var(--content-offset)' }}
-        />
-      )}
+
+      <div className="flex-none" style={{ height: 'var(--content-offset)' }} />
     </>
   )
 }

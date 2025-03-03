@@ -2,47 +2,53 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import loopHole from '@/images/logos/loophole.svg'
+import logoCosmos from '@/images/logos/blog.svg'
+import logoHelioStream from '@/images/logos/news.svg'
+import MealsLogo from '@/images/logos/meals.svg'
+import shopEase from '@/images/logos/shopEaseLogo.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'ShopEase.co',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'Developed a feature-rich e-commerce platform with a seamless shopping experience, including product listings, cart                  management and integrated secure authentication and user accounts for a smooth shopping experience.',
+    link: { href: 'https://shopease-theta.vercel.app/', label: 'ShopEase.co' },
+    logo: shopEase,
   },
   {
-    name: 'Animaginary',
+    name: 'LoopHole.com',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Built a feature-rich blogging platform where users can create, edit, and delete their own blogs, nested comments structure with user authentication with Lucia, allowing users to sign up, login and manage profiles securely.',
+    link: { href: 'https://github.com/gdsKaran/LoopHole', label: 'github.com' },
+    logo: loopHole,
   },
   {
-    name: 'HelioStream',
+    name: 'NewsApp',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Developed a dynamic news application that displays the latest news sorted by date, ensuring users stay updated.',
+    link: { href: 'https://github.com/gdsKaran/NewsApp', label: 'github.com' },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'Nested Comments Arena',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'Developed a fully interactive nested comment system that supports infinite replies, allowing users to engage in structured  discussions,delete functionality with seamless UI updates and proper state management.',
+    link: {
+      href: 'https://github.com/gdsKaran/Nested-Comments-Arena',
+      label: 'github.com',
+    },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Meals Recipe',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'An Interactive Nextjs webbsite, Where you can explore different kind of food recipes or publish your own homemade or local recipe to other users.',
+    link: {
+      href: 'https://github.com/gdsKaran/Meals-Recipe.co',
+      label: 'github.com',
+    },
+    logo: MealsLogo,
   },
 ]
 
