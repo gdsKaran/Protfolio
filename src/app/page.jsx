@@ -162,12 +162,12 @@ export default function Home() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Gagandeep Singh, I turn ideas into digital experiences with
+            I&apos;m Gagandeep Singh, I turn ideas into digital experiences with
             modern web technologies.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm a Full Stack Web Developer skilled in building
+              I&apos;m a Full Stack Web Developer skilled in building
               high-performance Next.js web applications. Ability to translate
               tinkering ideas into technical solutions, with strong intuitive
               problem solving skills
@@ -181,7 +181,7 @@ export default function Home() {
             <p>
               I thrive on solving complex problems through intuitive UI/UX
               design, optimized data handling, and seamless API integrations.
-              Whether it’s developing real-time dashboards, e-commerce
+              Whether it&apos;s developing real-time dashboards, e-commerce
               platforms, or dynamic blogging systems, I love turning ideas into
               functional, impactful solutions.
             </p>
@@ -191,7 +191,7 @@ export default function Home() {
               writing clean, maintainable code and creating applications that
               are not only functional but also engaging.
             </p>
-            <p>Let’s connect and build something amazing together! 🚀</p>
+            <p>Let&apos;s connect and build something amazing together! 🚀</p>
           </div>
         </div>
         <div className="lg:pl-20">
